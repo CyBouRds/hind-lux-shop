@@ -1,4 +1,5 @@
 export default {
+  'PRIVILÈGES HIND':'امتيازات هند','Offres du moment':'عروض هذه الفترة','Des attentions exclusives, disponibles pour une durée limitée.':'امتيازات حصرية متاحة لفترة محدودة.','COUPON':'رمز تخفيض','OFFRE':'عرض','Bientôt':'قريباً','En cours':'ساري الآن','de réduction avec le code':'تخفيض باستعمال الرمز','de réduction sur':'تخفيض على','Début':'البداية','Fin':'النهاية','Sans limite':'بدون حد','Temps restant':'الوقت المتبقي','Copier':'نسخ','Code copié.':'تم نسخ الرمز.','J':'ي','H':'س','MIN':'د','SEC':'ث',
   'Photos par couleur':'صور حسب اللون',
   'Associez une photo à chaque couleur disponible. Sans photo dédiée, la photo principale sera affichée.':'اربطي صورة بكل لون متوفر. عند عدم وجود صورة خاصة، ستُعرض الصورة الرئيسية.',
   'Nom en arabe':'الاسم بالعربية','Description en arabe':'الوصف بالعربية',

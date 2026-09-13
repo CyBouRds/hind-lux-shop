@@ -13,7 +13,7 @@ function limit(req,key,max,period){const k=key+req.socket.remoteAddress;const no
 const cookie=(v,age)=>`hind_session=${v}; HttpOnly; SameSite=Strict; Path=/; Max-Age=${age}${process.env.NODE_ENV==='production'?'; Secure':''}`;
 function json(res,status,data,headers={}){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...headers});res.end(JSON.stringify(data));}
 async function body(req){let raw='',length=0;for await(const chunk of req){length+=chunk.length;fail(length>8*1024*1024,'Fichier trop volumineux.',413);raw+=chunk;}try{return JSON.parse(raw||'{}');}catch{throw new AppError('Requête JSON invalide.');}}
-function publicData(){const d=readData();return {settings:d.settings,products:d.products.filter(p=>p.active).map(p=>({...p,salePrice:effectivePrice(p,d.offers)})),offers:d.offers.filter(o=>inPeriod(o))};}
+function publicData(){const d=readData(),today=new Date().toISOString().slice(0,10),visible=x=>x.active&&(!x.end||x.end>=today);return {settings:d.settings,products:d.products.filter(p=>p.active).map(p=>({...p,salePrice:effectivePrice(p,d.offers)})),offers:d.offers.filter(visible),coupons:d.coupons.filter(c=>visible(c)&&(!c.limit||c.used<c.limit)).map(({used,...c})=>c)};}
 const statuses={pending:['confirmed','cancelled'],confirmed:['shipped','cancelled'],shipped:['completed'],completed:[],cancelled:[]};
 const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');res.setHeader('X-Frame-Options','DENY');

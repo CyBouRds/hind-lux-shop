@@ -1,7 +1,7 @@
 import { t, getLocale } from './i18n';
 import LanguageSwitch from './LanguageSwitch';
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Search, Menu, Check, Minus, Plus, Trash2, MessageCircle, Instagram, ArrowUpRight } from 'lucide-react';
+import { ShoppingBag, Search, Menu, Check, Minus, Plus, Trash2, MessageCircle, Instagram, ArrowUpRight, Sparkles, Clock3, Copy } from 'lucide-react';
 import { Brand, Button, Arrow, Drawer, Field, Empty, ErrorMessage } from './ui';
 import { api, formatPrice as money } from './api';
 function loadCart() {
@@ -20,7 +20,8 @@ export default function Storefront({
   const {
     settings,
     products,
-    offers
+    offers,
+    coupons = []
   } = data;
   const [page, setPage] = useState(location.hash === '#collection' ? 'collection' : 'home'),
     [category, setCategory] = useState('Tout'),
@@ -97,8 +98,8 @@ export default function Storefront({
     <main id="main">
       {t(page === 'home' ? <>
         <section className="hero"><div className="hero-copy"><h1>{t(settings.heroTitle)}</h1><p>{t(settings.heroText)}</p><Button onClick={() => navigate()}>{t("D\xE9couvrir la collection ")}<Arrow /></Button></div><div className="hero-media"><img src={settings.heroImage} alt={t("Collection Hind Lux Shop, silhouette noire et détails dorés")} fetchPriority="high" /></div></section>
+        {t((offers.length > 0 || coupons.length > 0) && <PromotionShowcase offers={offers} coupons={coupons} navigate={navigate} onCopied={()=>setToast('Code copié.')} />)}
         <section className="featured section"><div className="section-heading"><h2>{t("Les pi\xE8ces du moment")}</h2><button className="text-link" onClick={() => navigate()}>{t("Toute la collection ")}<Arrow /></button></div><div className="product-grid">{t(products.filter(p => p.featured).slice(0, 4).map(p => <ProductCard key={p.id} product={p} onSelect={() => setSelected(p)} />))}</div>{t(!products.some(p => p.featured) && <Empty title={t("Une nouvelle sélection se prépare")}><button className="text-link" onClick={() => navigate()}>{t("Voir la collection ")}<Arrow /></button></Empty>)}</section>
-        {t(offers.length > 0 && <section className="offer-band"><div><span className="small-label">{t("LES RENDEZ-VOUS HIND")}</span><h2>{t(offers[0].name)}</h2><p>{t(offers[0].type === 'percent' ? offers[0].value + ' %' : money(offers[0].value))}{t(" de remise \xB7 ")}{t(offers[0].category || 'Toute la collection')}</p></div><Button secondary onClick={() => navigate(offers[0].category || 'Tout')}>{t("D\xE9couvrir l\u2019offre ")}<Arrow /></Button></section>)}
       </> : <section className="section collection"><div className="collection-heading"><h1>{t("La collection")}</h1><p>{t("Des essentiels, du caract\xE8re.")}</p></div><div className="collection-tools"><div className="tabs">{t(['Tout', ...settings.categories].map(c => <button className={category === c ? 'active' : ''} key={c} onClick={() => setCategory(c)}>{t(c)}</button>))}</div><label className="search-box"><Search size={18} /><input value={search} onChange={e => setSearch(e.target.value)} placeholder={t("Rechercher un produit…")} aria-label={t("Rechercher un produit")} /></label><select value={sort} onChange={e => setSort(e.target.value)} aria-label={t("Trier les produits")}><option value="featured">{t("Trier : S\xE9lection")}</option><option value="asc">{t("Prix croissant")}</option><option value="desc">{t("Prix d\xE9croissant")}</option><option value="name">{t("Nom A\u2013Z")}</option></select></div><div className="product-grid">{t(filtered.map(p => <ProductCard key={p.id} product={p} onSelect={() => setSelected(p)} />))}</div>{t(!filtered.length && <Empty title={t("Aucune pièce ne correspond")}><p>{t("Essayez un autre mot ou une autre cat\xE9gorie.")}</p><Button secondary onClick={() => {
             setSearch('');
             setCategory('Tout');
@@ -122,6 +123,21 @@ export default function Storefront({
         setToast('');
       }}>{t("Voir le panier")}</button></div>)}
   </>;
+}
+function PromotionShowcase({offers,coupons,navigate,onCopied}){
+  const [now,setNow]=useState(Date.now());
+  useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),1000);return()=>clearInterval(timer);},[]);
+  const items=[...offers.map(x=>({...x,kind:'offer'})),...coupons.map(x=>({...x,kind:'coupon'}))];
+  return <section className="promotions section" aria-labelledby="promotions-title"><div className="promotions-heading"><span className="small-label"><Sparkles size={14}/>{t('PRIVILÈGES HIND')}</span><h2 id="promotions-title">{t('Offres du moment')}</h2><p>{t('Des attentions exclusives, disponibles pour une durée limitée.')}</p></div><div className="promotion-grid">{items.map(item=><PromotionCard key={item.kind+item.id} item={item} now={now} navigate={navigate} onCopied={onCopied}/>)}</div></section>;
+}
+function PromotionCard({item,now,navigate,onCopied}){
+  const locale=getLocale()==='ar'?'ar-MA':'fr-MA',start=item.start?Date.parse(item.start+'T00:00:00Z'):null,end=item.end?Date.parse(item.end+'T23:59:59Z'):null;
+  const target=start&&now<start?start:end,remaining=target?Math.max(0,target-now):null,status=start&&now<start?'Bientôt':'En cours';
+  const divisors=[86400000,3600000,60000,1000],labels=['J','H','MIN','SEC'];
+  const units=remaining===null?null:divisors.map((size,i)=>({label:labels[i],value:String(i?Math.floor(remaining/size)%(divisors[i-1]/size):Math.floor(remaining/size)).padStart(2,'0')}));
+  const date=x=>x?new Intl.DateTimeFormat(locale,{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(x+'T12:00:00Z')):t('Sans limite');
+  const copy=async()=>{try{await navigator.clipboard.writeText(item.code);onCopied();}catch{}}
+  return <article className={'promotion-card '+item.kind}><div className="promotion-top"><span>{t(item.kind==='coupon'?'COUPON':'OFFRE')}</span><span className="promotion-status">{t(status)}</span></div><h3>{t(item.name)}</h3><strong className="promotion-value">{item.type==='percent'?item.value+'%':money(item.value)}</strong><p>{t(item.kind==='coupon'?'de réduction avec le code':'de réduction sur')} {item.kind==='offer'&&t(item.category||'Toute la collection')}</p><div className="promotion-dates"><span>{t('Début')} <b>{date(item.start)}</b></span><span>{t('Fin')} <b>{date(item.end)}</b></span></div>{units&&<div className="countdown" aria-label={t('Temps restant')}><Clock3 size={17}/>{units.map(u=><span key={u.label}><b>{u.value}</b><small>{t(u.label)}</small></span>)}</div>}<div className="promotion-action">{item.kind==='coupon'?<button className="coupon-copy" onClick={copy}><span>{item.code}</span><Copy size={16}/>{t('Copier')}</button>:<Button secondary onClick={()=>navigate(item.category||'Tout')}>{t("Découvrir l’offre ")}<Arrow/></Button>}</div></article>;
 }
 function ProductCard({
   product: p,
