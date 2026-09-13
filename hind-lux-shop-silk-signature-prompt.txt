@@ -1,0 +1,14 @@
+Generation method: built-in ImageGen
+Initial output: hind-lux-shop-silk-signature.png
+Final output: hind-lux-shop-signature-final.png
+
+Use case: logo-brand.
+Create one striking, beautifully resolved luxury logo for the brand "Hind Lux Shop". This is a new creative direction, a finished logo image.
+Scene/backdrop: a perfectly flat near-black background.
+Main design: an original bespoke HL ligature called a silk signature. The capital H and L share one elegant vertical stem. The H has high-contrast, sculpted serif strokes; its right stem extends down and curls into a sweeping but controlled L foot, like a fold of silk. Integrate the H crossbar and L flourish intelligently so it feels designed as a single memorable emblem. Both H and L must remain readable. A strong compact silhouette, beautifully balanced negative space, confident curves, immaculate optical spacing. The creative idea must come from the letters themselves.
+Style: sophisticated contemporary luxury boutique identity, precise flat vector-like artwork, warm champagne-gold foreground with solid color, tasteful flowing letterforms, exceptional typographic craft.
+Layout: one centered monogram in the upper middle; beneath it a perfectly typeset wordmark "HIND" in large elegant refined serif capitals, then "LUX SHOP" in smaller widely spaced clean sans-serif capitals. This must read exactly HIND LUX SHOP, with no extra words. The monogram and typography together occupy around 65% of the square canvas height, with generous breathing room and deliberate visual hierarchy.
+Constraints: one coherent logo only, no collage, no multiple variants, no mockup or photographed paper, no crown, no enclosing polygon or circle, no diamond icon, no sparkles, no flowers, no stock clip-art, no distracting background texture, no gradients, no 3D bevels, no watermarks. Prioritize a unique typographic idea and excellent readability.
+
+Final refinement prompt (built-in ImageGen):
+Edit this Hind Lux Shop logo. Keep exactly the existing HL monogram shape, its flowing L foot, typography, spelling HIND and LUX SHOP, centered layout and proportions. ONLY clean up the rendering: fill all letters and the monogram with a single solid champagne gold #D4B88A, with smooth crisp antialiased edges and no stray colored pixels, no bevels, no outlines and no gradients. Place the complete design on a completely solid, fully opaque matte black #0B0A09 background across the entire square canvas. This is an opaque logo presentation, absolutely no transparency anywhere in the image; do not remove the background. Produce a clean, finished high resolution PNG logo.

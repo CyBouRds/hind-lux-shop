@@ -1,0 +1,17 @@
+Method: built-in ImageGen edit
+Input: hind-lux-shop-bordeaux-wordmark.png
+Final image: hind-lux-shop-moroccan-luxe.png
+
+Use case: logo-brand.
+Edit the supplied Hind Lux Shop wordmark to introduce a sophisticated, restrained Moroccan luxury character.
+
+Preserve the word "Hind" in readable Latin letters, the "LUX SHOP" subtitle exactly, the overall centered horizontal composition, the custom serif letter family, the generous square ivory canvas, and the rich burgundy lettering. Keep it recognizable as the supplied logo.
+
+Make these two refined changes:
+1. Replace the round dot above the lowercase i with a small beautifully proportioned eight-point Moroccan zellige rosette in muted antique gold. Construct the rosette as two interlocking rotated squares with a very small clean ivory central opening, inspired by Moroccan geometric craft. It is one compact, legible, crisp emblem occupying approximately the original dot area, slightly wider if needed. It must clearly function as the dot of i.
+2. Refine the flowing crossbar of the capital H into a delicate sweeping arch inspired by a Moroccan riad doorway and carved arabesque, with elegant controlled curves, and render just this crossbar in the same muted antique gold. Keep the burgundy H stems fully readable and preserve their original structure.
+
+Visual character: contemporary Moroccan maison, refined craftsmanship, warm and luxurious, strong typography, understated ornament. Preserve the existing sculptural d ascender and its curled terminal. All other letterforms and the subtitle remain burgundy.
+Palette: deep burgundy, muted antique gold, warm ivory only.
+Finish: clean flat vector-like logo art with crisp contours, balanced optical spacing, no metallic glare, no gradients, no shadows, no texture, no 3D. Full canvas must have a solid completely opaque ivory background, alpha 255 throughout.
+Do not add any other words, Arabic text, icons, buildings, lamps, crescents, crowns, decorative border, pattern background, mockup, or watermark. One polished logo, not a collage.

@@ -1,0 +1,12 @@
+Mode: built-in image_gen tool; generate; single generation; no reference images.
+
+Use case: logo-brand
+Asset type: one original standalone luxury shop symbol, without any lettering.
+Primary request: create "Le Fil / Sfifa", a compact, sculptural continuous interwoven ribbon-knot inspired loosely by the flowing craft of Moroccan sfifa trims. This is a refined contemporary emblem, not a historical motif reconstruction.
+Scene/backdrop: square canvas filled edge to edge with one fully opaque, perfectly uniform deep ink blue #111D2D.
+Subject: exactly one original abstract knot symbol in warm solid brass ink #C9A56C. Use a single broad ribbon with two or three deliberate over-under crossings and spacious negative-space openings. Draw smooth controlled curves, subtly tapered bends, and a compact balanced silhouette with a slight flowing asymmetry. The ribbon should feel like a beautiful crafted clasp or folded silk, sophisticated and memorable at small sizes.
+Style/medium: completely flat, crisp vector-like graphic artwork rendered as a raster image. Solid fills and carefully controlled clean negative-space separations at crossings; the sculptural quality must come only from the silhouette and interweaving.
+Composition/framing: one centered symbol occupying about half of the square width, generous even margins, no other elements.
+Text: absolutely none. No text, no letters, no initials, no words, no numbers, no wordmark, no monogram; specifically do not draw H, HL, or HLS. The concept title is briefing only and must not appear.
+Constraints: exactly two flat colors, fully opaque background, clean visual simplicity and strong silhouette, polished luxury brand design.
+Avoid: gradients, texture, metallic shading, highlights, shadows, 3D, photorealism, mockups, frames, badges, borders, crowns, diamonds, decorative stars, floral ornament, extra marks, watermark, existing brand logos.

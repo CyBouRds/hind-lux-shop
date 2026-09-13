@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Hind Lux Shop HLS couture lettermark</title>
+  <desc id="desc">A creative HLS monogram inspired by a faceted jewel and Art Deco architecture.</desc>
+  <defs>
+    <linearGradient id="gold" x1="350" y1="310" x2="1190" y2="980" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF4CB"/><stop offset=".27" stop-color="#E8C574"/><stop offset=".58" stop-color="#AF782C"/><stop offset=".8" stop-color="#F3D98E"/><stop offset="1" stop-color="#996520"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Faceted couture emblem: deliberately built around H, L and S. -->
+  <g fill="none" stroke="url(#gold)" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M800 218 1118 400v366L800 948 482 766V400Z" stroke-width="5"/>
+    <path d="M800 260v644M524 424l276 160 276-160M524 742l276-158 276 158" stroke-width="2" opacity=".65"/>
+    <path d="M482 490 368 604l114 114M1118 490l114 114-114 114" stroke-width="5"/>
+    <path d="M422 604h172M1006 604h172" stroke-width="2" opacity=".72"/>
+    <path d="M800 164 838 202 800 240 762 202Z" stroke-width="3"/>
+    <path d="M800 926 824 950 800 974 776 950Z" stroke-width="3"/>
+  </g>
+  <!-- Letter-led monogram. The high-contrast lettering gives HLS a couture signature. -->
+  <text x="800" y="735" text-anchor="middle" fill="url(#gold)" font-family="Bodoni MT, Didot, Times New Roman, serif" font-size="340" font-weight="700" letter-spacing="-34">HLS</text>
+  <g fill="none" stroke="url(#gold)" stroke-linecap="round">
+    <path d="M554 796h492" stroke-width="6" filter="url(#glow)"/>
+    <path d="M648 826h304" stroke-width="2" opacity=".75"/>
+  </g>
+  <g fill="url(#gold)" text-anchor="middle">
+    <text x="800" y="1114" font-family="Bodoni MT, Didot, Times New Roman, serif" font-size="110" font-weight="600" letter-spacing="19">HIND LUX</text>
+    <text x="800" y="1182" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="17">SHOP</text>
+  </g>
+</svg>

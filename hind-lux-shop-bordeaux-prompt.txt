@@ -1,0 +1,12 @@
+Method: built-in ImageGen
+Final image: hind-lux-shop-bordeaux-wordmark.png
+
+Use case: logo-brand.
+Create one beautiful, distinctive professional luxury shop logo for "Hind Lux Shop" as a completely new typographic identity.
+
+Visual direction: a bespoke editorial WORDMARK, the entire word "Hind" is the hero. Set it in deep rich burgundy on a flat warm ivory background. Elegant, contemporary, tactile, quietly confident luxury.
+Letter design: draw the title-case word "Hind" as original custom typography, with a generous sculptural capital H and balanced lowercase i, n and d. Use confident thick curved stems, soft sharp-edged serifs, graceful contrast, and close immaculate kerning. Give the d a tall ascender ending in a restrained inward curl like the tip of a satin ribbon: one distinctive detail that remains clearly readable as d. Work a subtle n–d connection into the lettering so the word feels designed as a whole. Keep the dot of i round, clean and clearly separated. The letters must look artist-drawn and beautifully resolved, not simply typed in a generic font. Legibility is essential.
+Exact text: large "Hind" on the main line; small "LUX SHOP" beneath in precise, widely spaced sans-serif capitals, centered.
+Composition: one coherent centered wordmark, no separate monogram. Strong horizontal composition inside a square canvas, the main word spanning about 76% of the width. The logo group has generous balanced space above and below. Use the wordmark itself as the visual interest.
+Palette: solid dark burgundy #5B172A artwork; warm ivory #F5EFE5 background. Flat ink colors, crisp clean vector-like contours.
+Output: a polished single logo image. Full background must be solid opaque ivory across the entire image, alpha 255 everywhere. No transparency. No mockup, paper texture, shadows, metallic effects, gradients, crowns, jewels, flowers, icons, badges, decorative frames, extra text, collage, or watermark. Make this feel like a memorable boutique brand identity designed by an expert lettering artist.

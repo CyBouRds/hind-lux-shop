@@ -1,0 +1,16 @@
+Method: built-in ImageGen generation followed by a rendering correction
+Final image: hind-lux-symbol-bab.png
+
+Original prompt:
+Use case: logo-brand.
+Create ONE finished luxury brand SYMBOL ONLY, with absolutely no text, no lettering, no words, no initials, no numbers.
+
+Concept: "The welcoming threshold" — an abstract contemporary emblem inspired by a Moroccan riad entrance. Express the story of a door opening into an intimate, carefully crafted world.
+Invent a compact, beautiful horseshoe portal with two slightly opened door leaves and a clean central opening. Reduce it to a few sculptural flowing shapes: a broad rounded horseshoe arch with inward-curving shoulders, two asymmetric angled door panels, and a narrow muted brass inner edge that suggests the invitation to step through. The opening extends down to the bottom. There must NOT be a bar connecting the doors, and it must NOT form an H or any letter. The symbol must read as an inviting open doorway rather than a monogram. Strong refined silhouette, intelligently balanced negative space, subtle asymmetry to give it character. Shape the design as if it were a sophisticated jeweler's seal that would remain recognizable in a single color.
+
+Color and presentation: solid rich jade green, one restrained brass-gold inset accent, warm opaque ivory background. Flat 2D vector-like graphic, clean ink fills and perfectly resolved contours. One centered icon occupying about 62% of the square canvas height, generous breathing room.
+Cultural mood: contemporary Moroccan craftsmanship and architectural hospitality, sophisticated boutique luxury. It is a new design inspired by architecture, not a copy of an existing monument.
+Avoid all text and all letters including H, Hind, HL or HLS. No caption. No brand name. No decorative star, crescent, lantern, crown, flowers, mosque or building illustration. No surrounding badge, border, scene, mockup, metallic shading, gradients, shadows, paper texture, 3D, collage, or watermark. The entire canvas is a flat fully opaque ivory color with alpha 255 everywhere.
+
+Refinement prompt:
+Edit the supplied open-door emblem. Preserve exactly its shape, composition, proportions, jade arch, two asymmetric open jade door leaves, and thin golden edges. Change ONLY the rendering: remove all stray yellow, red and green edge pixels; use clean solid jade #164B44 and muted brass #B28A4C fills with smooth crisp antialiased edges. Place the emblem on a uniform solid warm ivory #F5F0E5 background across the entire square canvas, including the inner portal opening and all margins. The background MUST be fully opaque, no transparency anywhere, alpha 255 everywhere. Do not remove the background. No texture, no gradients, no shading. Absolutely no text, letters, initials, words, or numbers. Deliver one clean opaque logo image.

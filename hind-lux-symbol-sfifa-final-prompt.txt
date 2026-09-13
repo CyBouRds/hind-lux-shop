@@ -1,0 +1,9 @@
+Mode: built-in image_gen tool; precise-object-edit; one corrective edit.
+Reference: hind-lux-symbol-sfifa.png
+
+Use case: precise-object-edit.
+Input image: existing sfifa ribbon-knot logo, the sole edit target.
+Make only a rendering cleanup of this exact supplied logo. Preserve its silhouette, four loops, every crossing, positions, proportions, overall size, and centered composition exactly.
+Fill the entire square background edge to edge with fully opaque, perfectly uniform deep ink blue #111D2D. Fully opaque background, do not remove background, alpha 255 for every pixel in the final image.
+Replace the emblem's fill with completely flat, solid warm brass #C9A56C, keeping the same precise shape. Remove all stray yellow, pink, red, or brightly colored edge pixels and speckled artifacts. Remove shading, highlights, gradients, and textures. Render smooth clean edges against the opaque blue background.
+The final image must be a single flat brass ribbon-knot on a solid opaque dark blue square, with NO transparent pixels. Absolutely no text, no letters, no initials, no words, no extra symbols, no border, no mockup. Do not redesign the emblem or introduce new elements.

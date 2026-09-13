@@ -1,0 +1,11 @@
+Mode: Built-in image_gen tool; single new image generation.
+
+Use case: logo-brand
+Asset type: one finished luxury boutique symbol, image only, no typography.
+Scene/backdrop: perfectly flat, fully opaque warm ivory (#F4EDE2) square canvas.
+Primary request: create a distinctive contemporary artisan seal inspired by the interlacing construction and geometric rhythm of Moroccan weaving. Build a compact sculptural lozenge from just a few broad, folded, interwoven bands. Let the silhouette be a memorable vertically poised diamond, with a sophisticated over-and-under rhythm communicated ONLY through crisp ivory negative-space breaks. The bands should feel substantial and deliberately cut, with balanced corners and a clear small central opening; the result must be an original emblem, not a generic diamond outline or a repeated textile pattern.
+Style/medium: exceptionally refined flat graphic logo design, sharp clean edges, single solid ink color, bold scalable geometry with restrained complexity. Two-dimensional artwork, viewed straight on.
+Composition/framing: one emblem centered, occupying about 56 percent of the square canvas width, generous even empty margins, strong silhouette readable at small size.
+Color palette: solid deep terracotta (#9E432F) emblem on warm ivory (#F4EDE2), both fully opaque.
+Text: absolutely no text, no words, no letters, no initials, no numbers, no calligraphy, no literal Amazigh characters anywhere in the image.
+Constraints: only one symbol, no variations, no design board, no enclosing circle, no crown, no doorway, no eight-point star, no border, no slogan, no watermark. No gradients, texture, grain, metallic effect, shadows, embossing, lighting, 3D, mockup, photography, checkerboard or transparency.

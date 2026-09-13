@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600" role="img" aria-labelledby="title">
+  <title id="title">Hind Lux Shop luxury logo on black</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="72%"><stop offset="0" stop-color="#2A241A"/><stop offset="1" stop-color="#090806"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E8B5"/><stop offset=".42" stop-color="#D5AF59"/><stop offset=".73" stop-color="#A97B2D"/><stop offset="1" stop-color="#EBD38C"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1600" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="800" cy="600" r="332" stroke-width="5"/><circle cx="800" cy="600" r="304" stroke-width="1.5" opacity=".72"/>
+    <path d="M800 188 836 224 800 260 764 224Z" stroke-width="4"/><path d="M800 940 826 966 800 992 774 966Z" stroke-width="3" opacity=".84"/>
+    <path d="M424 600h74M1102 600h74" stroke-width="3" opacity=".78"/><path d="M800 333 848 381 800 429 752 381Z" stroke-width="4"/>
+  </g>
+  <g fill="none" stroke="url(#gold)" stroke-linecap="square" stroke-linejoin="miter"><path d="M625 470v260M625 600h174M799 470v260" stroke-width="25"/><path d="M932 470v259M932 729h-160" stroke-width="25"/><path d="M779 729v-72" stroke-width="25"/></g>
+  <circle cx="799" cy="600" r="11" fill="url(#gold)"/>
+  <g fill="url(#gold)" text-anchor="middle" font-family="Didot, Bodoni MT, Times New Roman, serif"><text x="800" y="1120" font-size="106" font-weight="600" letter-spacing="20">HIND LUX</text><path d="M506 1172h196M898 1172h196" stroke="url(#gold)" stroke-width="2"/><text x="800" y="1200" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="15">SHOP</text></g>
+</svg>

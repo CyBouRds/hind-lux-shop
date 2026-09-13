@@ -1,0 +1,11 @@
+export default {
+  'Photos par couleur':'صور حسب اللون',
+  'Associez une photo à chaque couleur disponible. Sans photo dédiée, la photo principale sera affichée.':'اربطي صورة بكل لون متوفر. عند عدم وجود صورة خاصة، ستُعرض الصورة الرئيسية.',
+  'Nom en arabe':'الاسم بالعربية','Description en arabe':'الوصف بالعربية',
+  'Contenu en arabe':'المحتوى بالعربية','Renseignez les versions arabes de vos textes personnalisés.':'أدخلي النسخة العربية من نصوصكِ المخصصة.',
+  'Titre d’accueil en arabe':'عنوان الرئيسية بالعربية','Texte d’accueil en arabe':'نص الرئيسية بالعربية','À propos en arabe':'نبذة عن المتجر بالعربية','Annonce en arabe':'الإعلان بالعربية','Livraison en arabe':'معلومات التوصيل بالعربية','Retours en arabe':'شروط الإرجاع بالعربية','Catégories en arabe':'الفئات بالعربية',
+  'Bienvenue chez Hind Lux Shop':'أهلاً بكِ في هند لوكس شوب','Passer l’introduction':'تخطي المقدمة','Activer le son':'تشغيل الصوت','Couper le son':'كتم الصوت','Revoir l’introduction':'إعادة المقدمة',
+  'Blanc':'أبيض','Beige':'بيج','Rouge':'أحمر','Bleu':'أزرق','Vert':'أخضر','Rose':'وردي','Marron':'بني','Gris':'رمادي','Argenté':'فضي','Bordeaux':'عنابي',
+  'Modifier un coupon':'تعديل رمز تخفيض','Modifier une offre':'تعديل عرض','Créer un coupon':'إنشاء رمز تخفيض','Créer une offre':'إنشاء عرض',
+  'Nom, image et catégorie valide sont obligatoires.':'الاسم والصورة والفئة الصحيحة مطلوبة.','Une catégorie est encore utilisée par un produit.':'إحدى الفئات ما زالت مستخدمة في منتج.','Ce code existe déjà.':'هذا الرمز موجود بالفعل.','Transition de statut non autorisée.':'لا يمكن الانتقال إلى هذه الحالة.','Mot de passe actuel incorrect.':'كلمة المرور الحالية غير صحيحة.','Utilisez entre 12 et 200 caractères.':'استخدمي بين 12 و200 حرف.','Utilisez une image importée ou une URL HTTPS.':'استخدمي صورة مستوردة أو رابط HTTPS.','Numéro WhatsApp international invalide.':'رقم واتساب الدولي غير صالح.','La fin doit suivre le début.':'يجب أن تكون النهاية بعد البداية.','Valeur numérique invalide.':'القيمة الرقمية غير صالحة.','Nom et remise valide obligatoires.':'الاسم والتخفيض الصحيح مطلوبان.','Date invalide.':'التاريخ غير صالح.','Images JPG, PNG ou WebP uniquement.':'صور JPG أو PNG أو WebP فقط.','Le fichier n’est pas une image valide.':'الملف ليس صورة صالحة.','Image limitée à 5 Mo.':'حجم الصورة الأقصى 5 ميغابايت.'
+};

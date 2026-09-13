@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { initialData } from '../server/seed.mjs';
+import { quote,effectivePrice,productInput,settingsInput,whatsappMessage } from '../server/domain.mjs';
+const data=()=>structuredClone(initialData);
+const cart={items:[{id:'sac-alba',size:'Unique',color:'Noir',quantity:1}]};
+test('server calculates trusted price and delivery, ignoring client totals',()=>{const q=quote(data(),{...cart,total:1,price:1});assert.equal(q.total,625);});
+test('best active offer followed by coupon and free shipping threshold',()=>{const d=data();d.offers=[{active:true,type:'percent',value:10},{active:true,type:'fixed',value:20},{active:false,type:'percent',value:99}];d.coupons=[{code:'HIND10',active:true,type:'percent',value:10,minimum:100,used:0,limit:5}];const q=quote(d,{...cart,coupon:'hind10'});assert.equal(q.subtotal,531);assert.equal(q.discount,53.1);assert.equal(q.total,512.9);});
+test('duplicate variants cannot exceed global stock',()=>{const d=data();d.products[0].stock=1;assert.throws(()=>quote(d,{items:[...cart.items,...cart.items]}),/Stock insuffisant/);});
+test('unavailable products, invalid quantities and variants are refused',()=>{for(const item of [{...cart.items[0],quantity:-1},{...cart.items[0],quantity:1.5},{...cart.items[0],size:'XL'},{...cart.items[0],id:'missing'}])assert.throws(()=>quote(data(),{items:[item]}));});
+test('expired, exhausted and minimum coupons are refused',()=>{for(const override of [{end:'2020-01-01'},{limit:1,used:1},{minimum:1000}]){const d=data();d.coupons=[{code:'HIND',active:true,type:'percent',value:10,minimum:0,limit:0,used:0,...override}];assert.throws(()=>quote(d,{...cart,coupon:'HIND'}));}});
+test('discount is capped and delivery uses discounted subtotal',()=>{const d=data();d.coupons=[{code:'GIFT',active:true,type:'fixed',value:99999,minimum:0,limit:0,used:0}];assert.equal(quote(d,{...cart,coupon:'GIFT'}).total,35);d.settings.freeShippingThreshold=590;assert.equal(quote(d,cart).delivery,0);});
+test('unsafe image and WhatsApp settings are rejected',()=>{const d=data();assert.throws(()=>productInput({...d.products[0],image:'javascript:alert(1)'},d));assert.throws(()=>settingsInput({...d.settings,whatsapp:'not a number'},d));assert.throws(()=>settingsInput({...d.settings,categories:['New']},d));});
+test('WhatsApp payload preserves accents, details and exact total',()=>{const q=quote(data(),cart);const url=whatsappMessage({...q,reference:'HL-TEST',customer:{name:'Cliente Test',phone:'0600000000',address:'Rue test',city:'Fès',note:''}},{name:'Hind Lux Shop',whatsapp:'212600000000'});assert.equal(new URL(url).hostname,'wa.me');assert.match(new URL(url).searchParams.get('text'),/Total : 625 DH/);assert.match(new URL(url).searchParams.get('text'),/Fès/);});

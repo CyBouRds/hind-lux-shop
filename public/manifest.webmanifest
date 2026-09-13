@@ -1,0 +1,20 @@
+{
+  "name": "Hind Lux Shop",
+  "short_name": "Hind Lux",
+  "description": "Boutique de vêtements et accessoires Hind Lux Shop",
+  "lang": "fr",
+  "dir": "auto",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#141414",
+  "icons": [
+    {
+      "src": "/images/brand-logo.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
