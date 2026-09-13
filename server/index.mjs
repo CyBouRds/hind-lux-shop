@@ -19,6 +19,7 @@ const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');res.setHeader('X-Frame-Options','DENY');
   try{
     const url=new URL(req.url,'http://localhost');const p=url.pathname;const method=req.method;
+    if(p==='/health'&&['GET','HEAD'].includes(method))return json(res,200,{status:'ok'});
     if(p.startsWith('/api/')){
       if(!['GET','HEAD'].includes(method)){
         const origin=req.headers.origin;

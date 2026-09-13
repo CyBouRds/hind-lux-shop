@@ -36,6 +36,10 @@ Le projet est prêt à être installé sur un hébergement Node avec disque pers
 
 Copier `.env.example` vers `.env` pour la configuration locale. Les scripts `start`, `dev`, `test` et `admin:password` chargent automatiquement ce fichier. Variables actives : `PORT` (3001), `HOST` (127.0.0.1), `DATA_DIR` (data), `NODE_ENV`, `PUBLIC_ORIGIN` et `ADMIN_PASSWORD` (uniquement au premier démarrage). `DATABASE_URL` et les clés API sont préparées comme emplacements privés, mais la version actuelle utilise SQLite ; un adaptateur serveur sera nécessaire avant de basculer vers PostgreSQL/Supabase. Utiliser HTTPS derrière un proxy inverse ; les cookies sont Secure en production.
 
+## Déploiement Railway
+
+Créer un service depuis ce dépôt, ajouter un volume monté sur `/data`, puis définir `HOST=0.0.0.0`, `DATA_DIR=/data` et `NODE_ENV=production`. Railway fournit automatiquement `PORT`. Le fichier `railway.json` configure la construction, le démarrage et la vérification `/health`.
+
 Sauvegarder la base avec `node scripts/backup.mjs` et copier également `data/uploads/` vers une sauvegarde privée. Les fichiers contiennent des informations de commande. Pour restaurer, arrêter le serveur, remplacer `shop.sqlite` avec la copie de sauvegarde et restaurer les uploads correspondants. Garder les sauvegardes hors du répertoire public.
 
 Architecture volontairement adaptée à une boutique unique et un processus Node. Une plateforme multi-boutiques, un stock par variante, des comptes clients, une facturation et l’intégration WhatsApp Business API seraient des extensions distinctes.
