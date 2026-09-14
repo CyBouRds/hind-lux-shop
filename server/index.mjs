@@ -70,7 +70,7 @@ const server=http.createServer(async(req,res)=>{
             if(method==='DELETE'){fail(!id,'Identifiant requis.');if(kind==='products')fail(d.orders.some(o=>['pending','confirmed','shipped'].includes(o.status)&&o.items.some(i=>i.id===id)),'Ce produit appartient à une commande ouverte. Désactivez-le.');if(kind==='coupons')fail(d.orders.some(o=>['pending','confirmed'].includes(o.status)&&o.coupon===d.coupons[index].code),'Coupon utilisé par une commande ouverte. Désactivez-le.');d[kind].splice(index,1);return {ok:true};}
             fail(!['POST','PUT'].includes(method)||method==='PUT'&&!id||method==='POST'&&id,'Action non autorisée.',405);
             const item=kind==='products'?productInput(v,d):discountInput(v,kind);
-            if(kind==='offers')fail(item.category&&!d.settings.categories.includes(item.category),'Catégorie invalide.');
+            if(kind==='offers'){fail(item.category&&!d.settings.categories.includes(item.category),'Catégorie invalide.');fail(item.productId&&!d.products.some(p=>p.id===item.productId),'Produit invalide.');}
             if(kind==='coupons'){fail(d.coupons.some(c=>c.id!==id&&c.code===item.code),'Ce code existe déjà.');if(index>=0)fail(d.coupons[index].code!==item.code&&d.orders.some(o=>o.coupon===d.coupons[index].code),'Le code d’un coupon utilisé ne peut plus être changé.');item.used=index>=0?d.coupons[index].used:0;}
             item.id=id||randomUUID();if(index>=0)d[kind][index]=item;else d[kind].push(item);return item;
           });return json(res,200,result);

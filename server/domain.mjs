@@ -3,7 +3,7 @@ export const fail = (condition, message, status=400) => { if(condition) throw ne
 export const money = n => Math.round(n * 100) / 100;
 export const inPeriod = (x, now=new Date().toISOString().slice(0,10)) => x.active && (!x.start || x.start<=now) && (!x.end || x.end>=now);
 export function effectivePrice(product, offers) {
-  const reductions=offers.filter(o=>inPeriod(o) && (!o.category || o.category===product.category)).map(o=> o.type==='percent' ? product.price*o.value/100 : o.value);
+  const reductions=offers.filter(o=>inPeriod(o) && (o.productId?o.productId===product.id:!o.category||o.category===product.category)).map(o=> o.type==='percent' ? product.price*o.value/100 : o.value);
   return money(Math.max(0,product.price-Math.max(0,...reductions)));
 }
 export function quote(data, input) {
@@ -46,7 +46,7 @@ export function discountInput(v,kind) {
   for(const date of [d.start,d.end]) fail(date&&(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date))),'Date invalide.');
   fail(d.start&&d.end&&d.end<d.start,'La fin doit suivre le début.');
   if(kind==='coupons'){d.code=str(v.code,40).toUpperCase();fail(!/^[A-Z0-9_-]{3,40}$/.test(d.code),'Code : 3 à 40 lettres, chiffres, tirets.');d.minimum=num(v.minimum);d.limit=num(v.limit,100000);fail(!Number.isInteger(d.limit),'Limite entière requise.');}
-  else d.category=str(v.category,60);
+  else {d.category=str(v.category,60);d.productId=str(v.productId,80);if(d.productId)d.category='';}
   return d;
 }
 export function settingsInput(v,data) {
